@@ -28,6 +28,11 @@ Output:
 
 typedef pair<int, int> pii;
 
+/* This would be the part of the algorithm that would augment the flow of the graph */
+bool augmentFlow(vector<vector<pii>>& adjList, int& flow, int src, int dst) {
+    return false;
+}
+
 
 int maxFlow(int n, vector<vector<int>>& edges, int src, int dst) {
     /* Intialize adjancency list for residual graph */
@@ -44,10 +49,9 @@ int maxFlow(int n, vector<vector<int>>& edges, int src, int dst) {
     /* We now find all the path from the src and dst while adjusting our residual graph */
     while (true) {
         /* Find the if we can find a path, we update the residual graph and update our maximum flow*/
+        if (!augmentFlow(adjList, maxFlow, src, dst)) break;
     }
 
     return maxFlow;
-
-
 
 }
