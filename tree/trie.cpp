@@ -1,20 +1,14 @@
-#include "includes.h"
+#include "../includes.h"
 
 using namespace std;
 
 
 class TrieNode {
     public:
-    TrieNode * children[26];
+    TrieNode * children[26]{}; // specify to not intialize it to garbage
     bool eow;
 
-    TrieNode() {
-        eow = false;
-        for (int i = 0; i < 26; ++i) {
-            children[i] = nullptr;
-        }
-    }
-};
+    TrieNode(): eow{false} {}
 
 
 class Trie{
